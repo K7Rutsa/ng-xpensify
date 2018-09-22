@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <form (ngSubmit)="formSubmitAdd(f)" #f="ngForm">
+      <mat-form-field class="pr-4">
+        <input matInput placeholder="Item" type="text" ngModel name="item">
+        <span matPrefix><i class="fas fa-file-invoice-dollar" style="color:#2b3677"></i>&nbsp;&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Amount" type="number" class="example-right-align" ngModel name="amount">
+        <span matPrefix><i class="fas fa-dollar-sign" style="color:#2b3677"></i>&nbsp;&nbsp;</span>
+      </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary" class="add" type="submit">ADD</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-4 expenses mx-auto">
+    <ul class="list-group w-100" *ngIf="expenses.length; else loading">
+      <li class="list-group-item d-flex justify-content-between" *ngFor="let expense of expenses">
+        <span><i class="far fa-edit" style="cursor: pointer; color: #E64A19" (click)="updateItem(expense)"></i>
+          {{expense.item | uppercase}}</span>
+        <span><i class="fas fa-rupee-sign"></i> {{expense.amount }}
+          &nbsp;&nbsp;&nbsp;<i class="far fa-times-circle" style="cursor: pointer; color: #a32f22" (click)="deleteItem(expense.id)"></i></span></li>
+    </ul>
+    <h1 class="display-4" *ngIf="noXpense">No Xpense... :)</h1>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+</div>

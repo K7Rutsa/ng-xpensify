@@ -1,0 +1,8 @@
+.add {
+  min-width: 0;
+}
+
+.expenses {
+  /* border: 2px solid red; */
+  max-width: 515px;
+}

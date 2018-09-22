@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <form (ngSubmit)="formSubmitUpdate(f)" #f="ngForm">
+      <mat-form-field class="pr-4">
+        <input matInput placeholder="Item" type="text" ngModel name="item" [ngModel]="item">
+        <span matPrefix><i class="fas fa-file-invoice-dollar" style="color:#2b3677"></i>&nbsp;&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Amount" type="number" class="example-right-align" ngModel name="amount" [ngModel]="amount">
+        <span matPrefix><i class="fas fa-dollar-sign" style="color:#2b3677"></i>&nbsp;&nbsp;</span>
+      </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary" class="add" type="submit">UPDATE</button>
+    </form>
+  </div>
+</div>

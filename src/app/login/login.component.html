@@ -1,0 +1,21 @@
+<div class="container login__form">
+  <div class="row">
+    <form class="w-100 col-md-4 offset-md-4 d-flex flex-column" (ngSubmit)="loginForm(f)" #f="ngForm">
+
+      <mat-form-field>
+        <input matInput placeholder="Enter your email" type="email" ngModel name="email" email required>
+        <i class="fa fa-envelope" aria-hidden="true" matSuffix></i>
+
+      </mat-form-field>
+
+      <mat-form-field class="mt-3">
+        <input matInput placeholder="Enter your password" [type]="hide ? 'text' : 'password'" ngModel name="password"
+          minlength="4" required>
+        <i class="fa fa-eye" aria-hidden="true" matSuffix (click)="hide = !hide"></i>
+      </mat-form-field>
+
+      <button class="btn btn-primary mt-4" type="submit" [disabled]="f.invalid">LOGIN</button>
+
+    </form>
+  </div>
+</div>
